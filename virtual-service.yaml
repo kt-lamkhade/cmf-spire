@@ -1,0 +1,21 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: my-virtual-service
+  namespace: default
+spec:
+  hosts:
+    - '*'
+  gateways:
+    - gateway
+  http:
+  - route:
+    - destination: 
+        host: nginx.nginx-test.svc.cluster.local
+    # - route:
+    #     - destination:
+    #         host: echoserver-service-ns1.ns1.svc.cluster.local
+    # - route:
+    #     - destination:
+    #         host: sleep-service-ns1.ns1.svc.cluster.local
+
